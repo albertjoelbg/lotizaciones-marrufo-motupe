@@ -11,8 +11,6 @@ import {
     uniqueIndex
 } from "drizzle-orm/pg-core";
 
-import {relations} from 'drizzle-orm';
-
 export const agente = pgTable("agente", {
     idAgente: smallint("id_agente").notNull().primaryKey(),
     nombreAgente: varchar("nombre_agente", {length: 50}).notNull(),
@@ -65,15 +63,4 @@ export const ubicacion = pgTable("ubicacion", {
     nombreUbicacion: varchar("nombre_ubicacion", {length: 50}).notNull(),
 }, (ubicacion) => ({
     uniqueUbicacionNombreUbicacion: uniqueIndex("ubicacion_nombre_ubicacion").on(ubicacion.nombreUbicacion),
-}));
-
-export const agenteRelations = relations(agente, ({many}) => ({
-    lotes: many(lote),
-}));
-
-export const loteRelations = relations(lote, ({one}) => ({
-    agente: one(agente, {
-        fields: [lote.idAgente],
-        references: [agente.idAgente],
-    })
 }));
