@@ -1,0 +1,42 @@
+# Node.js dependencies
+/node_modules
+.pnpm-debug.log
+
+# Build outputs
+/.svelte-kit
+/.vercel_build_output
+/vite.config.js.build.cache
+/build
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Vercel configuration (optional, if generated locally)
+.vercel
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.iml
+
+# Supabase auto-generated config (if using Supabase CLI)
+/supabase/.temp
+
+# pnpm-specific files
+.pnpm-store
+
+# Vite HMR cache
+.vite
